@@ -1,11 +1,14 @@
 import styles from './styles.module.css'
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Input from '../Input';
 
 export default function Cadastro() {
+    
+    const [termo, setTermo] = useState(false);
+
     const [reserva, setReserva] = useState({
         descricao:"",
         solicitante:"",
@@ -27,15 +30,26 @@ export default function Cadastro() {
             });
         }
         if (!termo) {
+            console.log('Aceite os termos!')
             toast.error('Por favor, concorde com os termos antes de prosseguir.');
+            return;
+        }
+
+        
+        const dataInicio = new Date(reserva.inicio);
+        const dataFim = new Date(reserva.fim);
+    
+        if (dataFim <= dataInicio) {
+            toast.error('A data de fim deve ser maior que a data de início.');
             return;
         }
 
         axios.post('http://localhost:3001/reservas', reserva)
             .then(resultado => {
                 console.log(resultado.data);
-                limparReserva();
                 toast.success('Agendamento realizado com sucesso!');
+                limparReserva();
+                
             })
             .catch(error => {
                 console.log(error);
@@ -43,15 +57,14 @@ export default function Cadastro() {
             })
     }
 
-    const [termo, setTermo] = useState(false);
-
+    
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.title}>
                     <h1>Reservar sala</h1>
                 </div>
-                <form>
+                <form onSubmit={e => inserirReserva(e)}>
                     <div className={styles.subcontainer}>
                         <div>
                             <label htmlFor='descricao'>Descrição:</label>
