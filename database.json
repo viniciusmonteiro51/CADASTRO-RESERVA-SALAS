@@ -1,52 +1,5 @@
 {
   "reservas": [
-    {
-      "descricao": "dasdada",
-      "solicitante": "adasdada",
-      "sala": "Bloco D",
-      "inicio": "2023-11-11T19:46",
-      "fim": "2023-11-23T19:46",
-      "id": 1
-    },
-    {
-      "descricao": "qqeqweq",
-      "solicitante": "ewqeqweqwe",
-      "sala": "Bloco C",
-      "inicio": "2023-11-04T19:50",
-      "fim": "2023-11-02T19:50",
-      "id": 2
-    },
-    {
-      "descricao": "dasdasdad",
-      "solicitante": "sadasd",
-      "sala": "Bloco C",
-      "inicio": "2023-11-14T20:00",
-      "fim": "2023-11-23T22:00",
-      "id": 3
-    },
-    {
-      "descricao": "dasdasdasd",
-      "solicitante": "dasdad",
-      "sala": "Bloco B",
-      "inicio": "2023-11-02T20:19",
-      "fim": "2023-11-16T20:19",
-      "id": 4
-    },
-    {
-      "descricao": "dasasd",
-      "solicitante": "adadd",
-      "sala": "Bloco C",
-      "inicio": "2023-11-03T20:21",
-      "fim": "2023-12-06T20:21",
-      "id": 5
-    },
-    {
-      "descricao": "rewrwerewrwerw",
-      "solicitante": "weewrwrw",
-      "sala": "Bloco C",
-      "inicio": "2023-11-17T20:24",
-      "fim": "2023-12-07T20:24",
-      "id": 6
-    }
+
   ]
 }
